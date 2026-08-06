@@ -1,0 +1,11 @@
+# Keep the build context small and the image clean.
+target/
+.git/
+.gitignore
+*.md
+docs/
+cypher/
+scripts/
+.DS_Store
+._*
+*.tar.gz

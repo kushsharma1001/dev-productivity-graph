@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.4</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.devgraph</groupId>
+    <artifactId>dev-productivity-graph</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Developer Productivity Graph</name>
+    <description>A Spring Boot graph engine that models software delivery as a network of
+        developers, commits, repositories, builds, deployments and incidents — and answers the
+        questions that only make sense as traversals: bus factor, knowledge silos, collaboration
+        clusters, and blame cascades from incident back to author.</description>
+
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <dependencies>
+        <!-- Web layer: brings in Spring MVC, embedded Tomcat, and Jackson
+             (so we no longer declare Jackson explicitly — the starter manages it). -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.neo4j.driver</groupId>
+            <artifactId>neo4j-java-driver</artifactId>
+            <version>6.1.0</version>
+        </dependency>
+
+        <!-- JUnit 5, MockMvc, spring-test, assertj — everything for web-layer tests. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>dev-productivity-graph</finalName>
+        <plugins>
+            <!-- Produces a runnable fat jar (java -jar) and enables `mvn spring-boot:run`. -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
