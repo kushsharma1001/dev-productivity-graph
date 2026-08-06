@@ -9,6 +9,8 @@ incidents — and answers the questions that only make sense as *traversals*:
 - **Collaboration patterns** — who actually works together (derived from reviews + co-editing), and what sub-teams emerge?
 - **Blame cascade** — trace a production incident backwards through deployment → build → PR → commit → file → the developers implicated.
 
+# Demo: https://dev-productivity-graph.onrender.com
+
 ## Why a graph (and not a table)
 
 Every headline question here is about **connections between entities**, not
@@ -133,7 +135,7 @@ curl 'localhost:8080/api/path?from=dev-frank&to=inc-1'
 <img width="1728" height="647" alt="Screenshot 2026-08-07 at 3 36 37 AM" src="https://github.com/user-attachments/assets/4fa0f951-a3c6-4f9b-b247-ca8f84ba3c2b" />
 <img width="1725" height="767" alt="Screenshot 2026-08-07 at 3 28 23 AM" src="https://github.com/user-attachments/assets/118ad23c-2ead-4c3b-80b8-fd8f4a55ac10" />
 
-## Demo: https://github.com/user-attachments/assets/9e574fa7-d89f-4db9-90bf-81dbf6ac89ce
+## Demo to build and run: https://github.com/user-attachments/assets/9e574fa7-d89f-4db9-90bf-81dbf6ac89ce
 
 ## Loading the graph from a script
 
