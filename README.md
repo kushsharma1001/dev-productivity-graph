@@ -75,23 +75,37 @@ line in `GraphConfig.graphStore()` and touches no service or API code.
 level, not the repo level. `COMMITS_WITH`/`COLLABORATES` is **never stored** — it
 is computed, which is the whole point.
 
-## Build & run
+## How to Build & Run the application?
 
-Requires **Java 17+**. Maven is **not** required — the bundled Maven Wrapper
+Go to the repository: https://github.com/kushsharma1001/developer-productivity-graph/tree/main
+Create and open a codeSpace by clicking on Code. Open the Codespace.
+
+Requires **Java 17+**. But, Codespace is configured to run on java17. Maven is **not** required — the bundled Maven Wrapper
 (`./mvnw`) downloads the pinned Maven version (3.9.9) on first use. On Windows use
 `mvnw.cmd`. (If you already have Maven installed, `mvn` works too.)
 
+Requires **CognoDB:**
+Set up CognoDB Cloud
+1. Create an account. Go to https://console.cognodb.com/signup and sign up. The free tier requires no credit card.
+2. Create a free instance. From the console, create a free (c0) instance and pick a region. It provisions in under a minute. Each workspace gets one free instance.
+3. Save your connection details. You will get a connection URI of the form bolt+s://<instance-id>.databases.cognodb.cloud and a generated password for the user "cognodb". The
+password is shown exactly once — copy or download it immediately and store it.
+
+Now, we have the VS Code in Codespace with Java17 and Maven. Open a terminal in this codespace and run below commands to run the application (Db is automatically seeded with data upon app run).
+
 ```bash
-./mvnw test                    # 15 tests: 9 pure-Java unit + 6 Spring web-layer (MockMvc)
-export NEO4J_USER=''           # set uname for neo4j
-export NEO4J_PASSWORD=''       # set password for neo4j
-export NEO4J_URI=''            # set url for neo4j
+./mvnw test                    # runs tests
+export NEO4J_USER=''           # set uname for neo4j from step (3) above
+export NEO4J_PASSWORD=''       # set password for neo4j from step (3) above
+export NEO4J_URI=''            # set url for neo4j from step (3) above
 ./mvnw clean install
 ./mvnw spring-boot:run         # start on http://localhost:8080
 ```
 
 Then open **http://localhost:8080/** for the demo UI (a static page served by
 Spring from `resources/static/`) 
+
+In Codespace, just switch to Ports tab next to the terminal. Then, just open the link in the Forwarded Address.
 
 ## Endpoints
 
@@ -107,6 +121,15 @@ curl 'localhost:8080/api/clusters?minStrength=3'
 curl localhost:8080/api/incidents/inc-1/blame
 curl 'localhost:8080/api/path?from=dev-frank&to=inc-1'
 ```
+
+<img width="1722" height="695" alt="Screenshot 2026-08-07 at 3 31 36 AM" src="https://github.com/user-attachments/assets/a440e2ae-32ef-44e2-a415-00f1179f37ea" />
+<img width="1723" height="613" alt="Screenshot 2026-08-07 at 3 32 15 AM" src="https://github.com/user-attachments/assets/3eb2b58e-76f0-4c9e-aaca-da4ad8478487" />
+<img width="1728" height="629" alt="Screenshot 2026-08-07 at 3 33 12 AM" src="https://github.com/user-attachments/assets/3b742bea-e167-40e3-87eb-f0ee710d81af" />
+<img width="1724" height="616" alt="Screenshot 2026-08-07 at 3 36 08 AM" src="https://github.com/user-attachments/assets/85ac2272-68a6-4161-9e89-22713d720d39" />
+<img width="1728" height="647" alt="Screenshot 2026-08-07 at 3 36 37 AM" src="https://github.com/user-attachments/assets/4fa0f951-a3c6-4f9b-b247-ca8f84ba3c2b" />
+<img width="1725" height="767" alt="Screenshot 2026-08-07 at 3 28 23 AM" src="https://github.com/user-attachments/assets/118ad23c-2ead-4c3b-80b8-fd8f4a55ac10" />
+
+## Demo: https://github.com/user-attachments/assets/9e574fa7-d89f-4db9-90bf-81dbf6ac89ce
 
 ## Loading the graph from a script
 
