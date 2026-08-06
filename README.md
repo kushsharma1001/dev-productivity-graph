@@ -77,7 +77,11 @@ is computed, which is the whole point.
 
 ## How to Build & Run the application?
 
-Go to the repository: https://github.com/kushsharma1001/developer-productivity-graph/tree/main
+App is hosted on onRender.com: https://dev-productivity-graph.onrender.com
+
+If you still like to build and run, follow below steps:
+
+Go to the repository: https://github.com/kushsharma1001/dev-productivity-graph/tree/main
 Create and open a codeSpace by clicking on Code. Open the Codespace.
 
 Requires **Java 17+**. But, Codespace is configured to run on java17. Maven is **not** required — the bundled Maven Wrapper
