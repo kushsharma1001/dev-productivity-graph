@@ -2,6 +2,8 @@
 
 The application starts by creating a complete developer-productivity graph. It contains **32 nodes** and **44 relationships** representing developers, repositories, files, commits, pull requests, reviews, builds, deployments, and an incident.
 
+<img width="1866" height="2184" alt="Image" src="https://github.com/user-attachments/assets/ce0b6da2-600a-4532-8a5f-7f438ef7ca01" />
+
 ## Developers
 
 ```text
@@ -190,5 +192,3 @@ Bob
 ```
 
 Because Bob's commit changed `web/checkout.js` and `web/nav.js`, the application's blame-cascade analysis identifies Bob and these files as connected to the incident.
-
-<img width="1866" height="2184" alt="Image" src="https://github.com/user-attachments/assets/ce0b6da2-600a-4532-8a5f-7f438ef7ca01" />
